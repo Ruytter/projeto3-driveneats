@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 414px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #e5e5e5;
+}
+
+.header {
+  max-width: 414px;
+  width: 100%;
+  height: 92px;
+  background-color: #cf2b2b;
+  color: #ffffff;
+  padding: 15px 20px;
+  box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.Righteous {
+  font-family: Righteous;
+  font-size: 44px;
+  font-weight: 400;
+}
+
+.roboto {
+  font-family: roboto;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.principal {
+  padding: 30px 0px 0px 20px;
+  margin: 92px 0;
+}
+
+.titulo {
+  font-family: Righteous;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.itens {
+  padding: 14px 0 30px 0;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.pratos,
+.bebidas,
+.sobremesas {
+  width: 172px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+  margin-right: 16px;
+  box-shadow: 0px 3px 12px 6px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.pratos {
+  height: 216px;
+}
+
+.bebidas {
+  height: 202px;
+}
+
+.sobremesas {
+  height: 197px;
+}
+
+.border-prato,
+.border-bebida,
+.border-sobremesa {
+  border: 5px solid #32b72f;
+}
+
+ion-icon {
+  color: #32b72f;
+  font-weight: 400;
+  font-size: 16px;
+  z-index: 0;
+}
+
+.hide{
+  display: none;
+}
+
+.icon {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+img {
+  width: 144px;
+  height: 87px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.25);
+}
+
+.subtitulo {
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.descricao {
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.preco {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  font-style: Regular;
+
+}
+
+.footer {
+  max-width: 414px;
+  width: 100%;
+  height: 92px;
+  background-color: white;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 20px;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer p {
+  width: 364px;
+  height: 61px;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 12px auto;
+  color: #ffffff;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.button{
+  padding-top: 9px;
+  background-color: #cbcbcb;
+}
+
+.fechar-pedido{
+  padding-top: 20px;
+  background-color: #32b72f;
+}
+
+/*tela de confirmação do pedido*/
+.confirma-pedido{
+  Width:378px;
+  Height:354px;
+  margin: 0 auto;
+  background-color: #50D074;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.25);
+  padding-top: 10px;
+  border-radius: 20px;
+  position: fixed;
+  top: calc(50% - 177px); 
+  left: calc(50% - 185px);
+  z-index: 1;  
+}
+.confirma-pedido div{
+  width: 333px;
+  margin: 18px auto;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 22px;
+  color:#FFFFFF;
+  display: flex;
+  justify-content: space-between;
+}
+.confirma-pedido .titulo{
+  margin: auto;
+}
+.confirma-pedido, .confirma-pedido .titulo, .confirma-pedido .total{
+  font-weight: 700;
+}
+.confirma-pedido .confirma{
+  width: 100%;
+  height: 52px;
+  border-radius: 100px;
+  background-color: #FFFFFF;
+  color:#50D074;
+  text-align: center;
+  padding-top: 14px;
+}
+.confirma-pedido .cancelar{
+  width: 100%;
+  height: 52px;
+  font-size: 20px;
+  color:#FFFFFF;
+  text-align: center;
+  padding-top: 6px;
+}
