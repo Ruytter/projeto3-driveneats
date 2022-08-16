@@ -4,7 +4,7 @@ endereco = "",
 contItens = 0,
 pratoEscolhido,
 bebidaEscolhida,
-sobermesaEscolhida,
+sobremesaEscolhida,
 precoPrato,
 precoBebida,
 precoSobremesa,
@@ -13,67 +13,70 @@ confirma_Pedido = document.querySelector('.confirma-pedido');
 
 /*Seleciona o prato, incrementa a variável de controle de quantidade de 
 itens selecionados e chama a função itensEscolhido()*/
-function prato(m){    
+function prato(p){
+    pratoEscolhido = p.querySelector('.subtitulo').innerHTML;   
+    precoPrato = p.querySelector('.preco').innerHTML;  
     const selecionado = document.querySelector('div.border-prato');
-    const itemSelecionado = document.querySelector(".prato"+m);
-    const icon = document.querySelector(".prato"+m+" .icon ion-icon");
-    if (selecionado && selecionado !== itemSelecionado){
+    const icon = p.querySelector(".icon ion-icon");
+    if (selecionado && selecionado !== p){
         const iconShow = document.querySelector('div.border-prato ion-icon');
-        iconShow.classList.add("hide");
+        iconShow.classList.remove("hide-icon");
         selecionado.classList.remove('border-prato');
         contItens--;
     }    
-    if(selecionado === itemSelecionado){;
+    if(selecionado === p){;
         contItens--;
     }else{
         contItens++;
     }    
-    icon.classList.toggle("hide");
-    itemSelecionado.classList.toggle("border-prato");
+    icon.classList.toggle("hide-icon");
+    p.classList.toggle("border-prato");
     itensEscolhido();
 }
 
 /*Seleciona a bebida, incrementa a variável de controle de quantidade de 
 itens selecionados e chama a função itensEscolhido()*/
-function bebida(m){    
+function bebida(b){
+    bebidaEscolhida = b.querySelector('.subtitulo').innerHTML;   
+    precoBebida = b.querySelector('.preco').innerHTML;
     const selecionado = document.querySelector('div.border-bebida');
-    const itemSelecionado = document.querySelector(".bebida"+m);
-    const icon = document.querySelector(".bebida"+m+" .icon ion-icon");
-    if (selecionado && selecionado !== itemSelecionado){
+    const icon = b.querySelector(".icon ion-icon");
+    if (selecionado && selecionado !== b){
         const iconShow = document.querySelector('div.border-bebida ion-icon');
-        iconShow.classList.add("hide");
+        iconShow.classList.remove("hide-icon");
         selecionado.classList.remove('border-bebida');
         contItens--;
     }
-    if(selecionado === itemSelecionado){
+    if(selecionado === b){
         contItens--;
     }else{
         contItens++;
     }
-    icon.classList.toggle("hide");
-    itemSelecionado.classList.toggle("border-bebida");
+    icon.classList.toggle("hide-icon");
+    b.classList.toggle("border-bebida");
     itensEscolhido();
 }
 
 /*Seleciona a sobremesa, incrementa a variável de controle de quantidade de 
 itens selecionados e chama a função itensEscolhido()*/
-function sobremesa(m){    
+function sobremesa(s){
+    sobremesaEscolhida = s.querySelector('.subtitulo').innerHTML;   
+    precoSobremesa = s.querySelector('.preco').innerHTML;
     const selecionado = document.querySelector('div.border-sobremesa');
-    const itemSelecionado = document.querySelector(".sobremesa"+m);
-    const icon = document.querySelector(".sobremesa"+m+" .icon ion-icon");
-    if (selecionado && selecionado !== itemSelecionado){
+    const icon = s.querySelector(".icon ion-icon");
+    if (selecionado && selecionado !== s){
         const iconShow = document.querySelector('div.border-sobremesa ion-icon');
-        iconShow.classList.add("hide");
+        iconShow.classList.remove("hide-icon");
         selecionado.classList.remove('border-sobremesa');
         contItens--;
     }
-    if(selecionado === itemSelecionado){
+    if(selecionado === s){
         contItens--;
     }else{
         contItens++;
     }
-    icon.classList.toggle("hide");
-    itemSelecionado.classList.toggle("border-sobremesa");  
+    icon.classList.toggle("hide-icon");
+    s.classList.toggle("border-sobremesa");  
     itensEscolhido();
 }
 
@@ -97,12 +100,6 @@ const fecharPedido = () => {
         const button = document.querySelector('div.footer p');
         const fecharPedido = document.querySelector('div.footer .fechar-pedido');
         if (button === fecharPedido){
-            pratoEscolhido = document.querySelector('div.border-prato .subtitulo').innerHTML;
-            bebidaEscolhida = document.querySelector('div.border-bebida .subtitulo').innerHTML;
-            sobermesaEscolhida = document.querySelector('div.border-sobremesa .subtitulo').innerHTML;
-            precoPrato = document.querySelector('div.border-prato .icon .preco').innerHTML;
-            precoBebida = document.querySelector('div.border-bebida .icon .preco').innerHTML;
-            precoSobremesa = document.querySelector('div.border-sobremesa .icon .preco').innerHTML;
             precoPrato = precoPrato.split(" ");
             precoBebida = precoBebida.split(" ");
             precoSobremesa = precoSobremesa.split(" ");
@@ -115,11 +112,11 @@ const fecharPedido = () => {
         }
 
         document.querySelector("div.confirma-pedido #prato .item").innerHTML = pratoEscolhido;
-        document.querySelector("div.confirma-pedido #prato .preco").innerHTML = "R$ "+precoPrato[1].replace('.', ',');
+        document.querySelector("div.confirma-pedido #prato .preco").innerHTML = precoPrato[1].replace('.', ',');
         document.querySelector("div.confirma-pedido #bebida .item").innerHTML = bebidaEscolhida;
-        document.querySelector("div.confirma-pedido #bebida .preco").innerHTML = "R$ "+precoBebida[1].replace('.', ',');
-        document.querySelector("div.confirma-pedido #sobremesa .item").innerHTML = sobermesaEscolhida;
-        document.querySelector("div.confirma-pedido #sobremesa .preco").innerHTML = "R$ "+precoSobremesa[1].replace('.', ',');
+        document.querySelector("div.confirma-pedido #bebida .preco").innerHTML = precoBebida[1].replace('.', ',');
+        document.querySelector("div.confirma-pedido #sobremesa .item").innerHTML = sobremesaEscolhida;
+        document.querySelector("div.confirma-pedido #sobremesa .preco").innerHTML = precoSobremesa[1].replace('.', ',');
         document.querySelector("div.confirma-pedido #total .preco").innerHTML = "R$ "+Total;
         nome = prompt('Informe seu nome, por favor!');
         endereco = prompt('Agora, o endereço para entrega.');

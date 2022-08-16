@@ -79,6 +79,16 @@
   height: 197px;
 }
 
+.pratos:hover,
+.bebidas:hover,
+.sobremesas:hover,
+.confirma-pedido .confirma:hover,
+.confirma-pedido .cancelar:hover,
+.fechar-pedido:hover {
+  cursor:pointer;
+}
+
+
 .border-prato,
 .border-bebida,
 .border-sobremesa {
@@ -90,6 +100,13 @@ ion-icon {
   font-weight: 400;
   font-size: 16px;
   z-index: 0;
+  opacity: 0;
+}
+
+.pratos.border-prato .hide-icon,
+.bebidas.border-bebida .hide-icon,
+.sobremesas.border-sobremesa .hide-icon{
+  opacity: 1;
 }
 
 .hide{
@@ -209,4 +226,8 @@ img {
   color:#FFFFFF;
   text-align: center;
   padding-top: 6px;
+}
+
+.menu .sessao .opcoes .opcao.selecionado .check {
+  opacity: 1;
 }
