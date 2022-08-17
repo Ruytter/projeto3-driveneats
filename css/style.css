@@ -100,17 +100,14 @@ ion-icon {
   font-weight: 400;
   font-size: 16px;
   z-index: 0;
-  opacity: 0;
-}
-
-.pratos.border-prato .hide-icon,
-.bebidas.border-bebida .hide-icon,
-.sobremesas.border-sobremesa .hide-icon{
-  opacity: 1;
 }
 
 .hide{
   display: none;
+}
+
+.hide-icon{
+  opacity: 0;
 }
 
 .icon {
@@ -226,8 +223,4 @@ img {
   color:#FFFFFF;
   text-align: center;
   padding-top: 6px;
-}
-
-.menu .sessao .opcoes .opcao.selecionado .check {
-  opacity: 1;
 }
